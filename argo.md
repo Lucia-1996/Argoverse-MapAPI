@@ -11,14 +11,13 @@
 根元素下有两种元素：`node`和`way`
 
 `tag=node`记录城市所有`centerline`的坐标值
-
-![](/home/lulijing/图片/2021-08-30 15-43-20 的屏幕截图.png)
+![image](https://user-images.githubusercontent.com/95835767/145328160-e20d3868-6219-4655-9284-1b184a1092dc.png)
 
 将`node`元素的属性值读取到字典`all_gragh_nodes`中，保存全部`centerline`结点信息（x,y,id,height）
 
 `tag=way`记录每条lane的信息，‘has_traffic_control’:是否有交通管制，‘turn_direction’:转向，‘is_intersection’:是否为路口，‘l_neighbor_id’,'r_neighbor_id':左右邻居，‘predecessor’，‘successor’:前驱后继；‘ref'记录该条lane的所有centerlines，属性值对应于`tag=node`中的id。
 
-![](/home/lulijing/图片/2021-08-30 15-58-11 的屏幕截图.png)
+![image](https://user-images.githubusercontent.com/95835767/145328172-76c5033a-b727-4306-8e66-cbc0854cda3b.png)
 
 遍历元素way中的信息，将属性名为`k`的信息存入`lane_obj`中，将属性名为`ref`的属性值存入`node_id_list`中
 
@@ -30,7 +29,7 @@ ref对应`all_gragh_nodes`中的id,保存过程会通过`convert_node_id_list_to
 
 `PS`:`xml`文件——
 
-![](/home/lulijing/图片/2021-08-30 15-52-13 的屏幕截图.png)
+![image](https://user-images.githubusercontent.com/95835767/145328185-8f319d04-86c0-4e3d-b904-720e9b38e851.png)
 
 根元素（有且只有一个）\<`ArgoverseVectorMap`>
 
@@ -150,8 +149,7 @@ ref对应`all_gragh_nodes`中的id,保存过程会通过`convert_node_id_list_to
    •`cv2.THRESH_TOZERO`
    •`cv2.THRESH_TOZERO_INV`
 
-<img src="https://img-blog.csdn.net/20180723181854671?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExOTk5MDQxMg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img" style="zoom: 67%;" />
-
+![image](https://user-images.githubusercontent.com/95835767/145328237-19416af4-f3d6-4e89-a857-facaf588def7.png)
 `contours,hierarchy = cv2.findContours(image,mode,method)`
 
 mode:轮廓检索模式
